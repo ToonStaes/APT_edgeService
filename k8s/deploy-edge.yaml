@@ -27,11 +27,11 @@ spec:
             memory: "200Mi"
         env:                    # Environment variables supplied to the Pod
         - name: GERECHT_SERVICE_BASEURL
-          value: "https://gerecht-service-server-toonstaes.cloud.okteto.net"
+          value: "gerecht-service-server-toonstaes.cloud.okteto.net"
         - name: PERSONEEL_INFO_SERVICE_BASEURL
-          value: "https://personeel-service-server-toonstaes.cloud.okteto.net"
+          value: "personeel-service-server-toonstaes.cloud.okteto.net"
         - name: BESTELLING_INFO_SERVICE_BASEURL
-          value: "https://bestelling-service-server-toonstaes.cloud.okteto.net"
+          value: "bestelling-service-server-toonstaes.cloud.okteto.net"
 ---
 apiVersion: v1                # API version
 kind: Service                 # Type of the kubernetes resource
