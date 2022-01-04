@@ -15,22 +15,17 @@ jobs:
         with:
           java-version: 11
 
-      - name: Start MongoDB for integration test
-        uses: supercharge/mongodb-github-action@1.3.0
-        with:
-          mongodb-version: 4.2
-          
       - name: Build, test and package project
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=ToonStaes_APT_edgeService
-      
+
       - name: Docker login
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Docker Build
-        run: docker build -t ${{ secrets.DOCKER_USER }}/gerecht-service:latest .
+        run: docker build -t ${{ secrets.DOCKER_USER }}/APT_edgeService:latest .
 
       - name: Upload container to Docker Hub with Push
-        run: docker push ${{ secrets.DOCKER_USER }}/gerecht-service:latest
+        run: docker push ${{ secrets.DOCKER_USER }}/APT_edgeService:latest
