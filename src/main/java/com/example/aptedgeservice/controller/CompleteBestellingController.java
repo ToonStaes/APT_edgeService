@@ -42,10 +42,11 @@ public class CompleteBestellingController {
 
     @GetMapping("/bestellingen")
     public List<CompleteBestelling> getBestellingen(){
-        ResponseEntity<List<Bestelling>> responseEntityBestellingen = restTemplate.exchange("https://" + bestellingServiceBaseUrl + "/bestellingen", HttpMethod.GET, null, new ParameterizedTypeReference<List<Bestelling>>() {
+        ResponseEntity<List<Bestelling>> responseEntityBestellingen = restTemplate.exchange("https://" + bestellingServiceBaseUrl + "/bestellingen", HttpMethod.GET, null, new ParameterizedTypeReference<List>() {
         });
         List<Bestelling> bestellingen = responseEntityBestellingen.getBody();
         List<CompleteBestelling> completeBestellingen = new ArrayList<>();
+        assert bestellingen != null;
         for (Bestelling bestelling: bestellingen){
             if (bestelling != null){
                 completeBestellingen.add(vulBestelling(bestelling));
@@ -83,6 +84,13 @@ public class CompleteBestellingController {
     @GetMapping("/personeel/{personeelsNummer}")
     public Personeel getPersoneelByPersoneelsNummer(@PathVariable String personeelsNummer){
         return restTemplate.getForObject("https://" + personeelServiceBaseUrl + "/personeel/" + personeelsNummer, Personeel.class);
+    }
+
+    @GetMapping("/personeel/functie/{functie}")
+    public List<Personeel> getPersoneelByFunctie(@PathVariable String functie){
+        ResponseEntity<List<Personeel>> responseEntityPersoneel = restTemplate.exchange("https://" + personeelServiceBaseUrl + "/personeel/functie/" + functie, HttpMethod.GET, null, new ParameterizedTypeReference<List<Personeel>>() {
+        });
+        return responseEntityPersoneel.getBody();
     }
 
     @GetMapping("/gerechten")
