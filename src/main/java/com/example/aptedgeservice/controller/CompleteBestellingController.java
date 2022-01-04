@@ -42,7 +42,7 @@ public class CompleteBestellingController {
 
     @GetMapping("/bestellingen")
     public List<CompleteBestelling> getBestellingen(){
-        ResponseEntity<List<Bestelling>> responseEntityBestellingen = restTemplate.exchange("https://" + bestellingServiceBaseUrl + "/bestellingen", HttpMethod.GET, null, new ParameterizedTypeReference<List>() {
+        ResponseEntity<List<Bestelling>> responseEntityBestellingen = restTemplate.exchange("https://" + bestellingServiceBaseUrl + "/bestellingen", HttpMethod.GET, null, new ParameterizedTypeReference<List<Bestelling>>() {
         });
         List<Bestelling> bestellingen = responseEntityBestellingen.getBody();
         List<CompleteBestelling> completeBestellingen = new ArrayList<>();
