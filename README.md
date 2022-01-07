@@ -1,5 +1,5 @@
 # README
-Dit is de combinedServices repository voor het Advanced Programming Topics-project van Arne Hus, Toon Staes en Niels Verheyen.
+Dit is de edge repository voor het Advanced Programming Topics-project van Arne Hus, Toon Staes en Niels Verheyen.
 
 Swagger-url: [Swagger](https://edge-service-server-arnehus.cloud.okteto.net/swagger-ui.html#/complete-bestelling-controller)
 API base-url: [API base](https://edge-service-server-arnehus.cloud.okteto.net) (Op deze pagina gaat niets te zien zijn.)
