@@ -1,8 +1,13 @@
 # README
 Dit is de edge repository voor het Advanced Programming Topics-project van Arne Hus, Toon Staes en Niels Verheyen.
+We hebben als thema gekozen voor een deel je pizza restaurant. Per persoon kan je 1 pizza kiezen, en deze zouden dan verdeeld moeten worden over iedereen aan de tafel.
+Onze microservices zijn Gerecht, Personeel en Bestelling. Deze applicatie zorgt ervoor dat het management de bestellingen kan opvolgen. 
 
 Swagger-url: [Swagger](https://edge-service-server-arnehus.cloud.okteto.net/swagger-ui.html#/complete-bestelling-controller)
 API base-url: [API base](https://edge-service-server-arnehus.cloud.okteto.net) (Op deze pagina gaat niets te zien zijn.)
+
+Volledige microservices architectuur:
+![Architectuur Microservices](img_readMe/APT.png)
 
 Hieronder nog enkele screenshots van de resultaten van een raadpleging van de endpoints:
 
