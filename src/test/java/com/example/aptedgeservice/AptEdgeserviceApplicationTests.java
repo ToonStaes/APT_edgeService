@@ -10,4 +10,9 @@ class AptEdgeserviceApplicationTests {
     void contextLoads() {
     }
 
+    @Test
+    void applicationContextTest() {
+        AptEdgeserviceApplication.main(new String[] {});
+    }
+
 }

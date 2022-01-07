@@ -7,6 +7,15 @@ public class Bestelling {
     private String personeelsNummer;
     private List<String> gerechten;
 
+    public Bestelling() {
+    }
+
+    public Bestelling(String bestelNummer, String personeelsNummer, List<String> gerechten) {
+        this.bestelNummer = bestelNummer;
+        this.personeelsNummer = personeelsNummer;
+        this.gerechten = gerechten;
+    }
+
     public String getBestelNummer() {
         return bestelNummer;
     }

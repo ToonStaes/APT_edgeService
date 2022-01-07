@@ -6,6 +6,16 @@ public class Personeel {
     private Functie functie;
     private String personeelsnummer;
 
+    public Personeel() {
+    }
+
+    public Personeel(String voornaam, String achternaam, Functie functie, String personeelsnummer) {
+        this.voornaam = voornaam;
+        this.achternaam = achternaam;
+        this.functie = functie;
+        this.personeelsnummer = personeelsnummer;
+    }
+
     public String getVoornaam() {
         return voornaam;
     }

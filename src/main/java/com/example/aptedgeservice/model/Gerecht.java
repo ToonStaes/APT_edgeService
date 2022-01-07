@@ -5,6 +5,15 @@ public class Gerecht {
     private double prijs;
     private String gerechtNummer;
 
+    public Gerecht() {
+    }
+
+    public Gerecht(String naam, double prijs, String gerechtNummer) {
+        this.naam = naam;
+        this.prijs = prijs;
+        this.gerechtNummer = gerechtNummer;
+    }
+
     public String getNaam() {
         return naam;
     }
